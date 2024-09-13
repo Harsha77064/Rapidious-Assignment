@@ -1,29 +1,44 @@
-# Rapidious-Assignment
+The provided code demonstrates the application of various machine learning algorithms to the Epicurious Recipes (Epirecipes) dataset, with the goal of predicting whether a recipe is classified as a dessert. The workflow includes several models, such as Logistic Regression, Gaussian Naive Bayes, K-Nearest Neighbors (KNN), Random Forest, Support Vector Machine (SVM), Decision Trees, AdaBoost, and a Neural Network implemented using TensorFlow/Keras.
 
-Machine learning algorithms can be applied to the Epicurious Recipes (Epirecipes) dataset for various tasks such as recipe recommendation, ingredient prediction, or understanding cuisine patterns. Here’s a small overview of how machine learning algorithms might be utilized with this dataset:
-1. Classification Algorithms:
-Logistic Regression / SVM: Used to classify recipes into different categories such as cuisine type (Italian, Indian, etc.) or meal type (breakfast, lunch, dinner).
-Naive Bayes: This algorithm could be employed to predict categories of recipes based on text descriptions or ingredients.
+Data Preprocessing:
+The dataset epi_r.csv is loaded and filtered to exclude recipes with extremely high calorie counts.
+The target variable is the "dessert" label, and features like calories, protein, fat, and sodium are used for model input.
+Machine Learning Models:
+Logistic Regression:
 
-2.Clustering Algorithms:
-K-Means / Hierarchical Clustering: Useful for grouping similar recipes based on shared ingredients or cuisine types, helping users discover new recipes with similar profiles to ones they already like.
+This classifier is used to predict whether a recipe is a dessert. The model performs with high accuracy (96%), demonstrating strong precision and recall.
+The model’s performance is visualized using an ROC curve.
+Gaussian Naive Bayes:
 
-3.Regression Algorithms:
-Linear Regression: Could estimate cooking times or calorie content of a recipe based on ingredients and preparation methods.
+Gaussian Naive Bayes is another model tested, achieving 94% accuracy on the test data, slightly lower than Logistic Regression.
+K-Nearest Neighbors (KNN):
 
-These algorithms would be applied after pre-processing the dataset, which may involve cleaning text data (ingredients, instructions), tokenizing recipe descriptions, encoding categorical data (e.g., cuisine types), and splitting the dataset into training and testing sets.
+KNN is applied and optimized using GridSearchCV to determine the best number of neighbors, with 4 being optimal. The final accuracy is 78.7%.
+Random Forest:
 
-In the context of the Epicurious Recipes (Epirecipes) dataset, machine learning scatter plots are useful for visualizing relationships between features (like ingredients, recipe ratings, or categories) and machine learning outcomes. Scatter plots allow you to identify patterns, clusters, and correlations, which can help guide your model development and understanding. Here's a brief overview of how scatter plots might be used with the Epirecipes dataset:
+A Random Forest classifier is implemented, and hyperparameter tuning is performed using GridSearchCV. After tuning, the model achieves an accuracy of 82%.
+Support Vector Machine (SVM):
 
-Ingredient vs. Rating Scatter Plot:
+The SVM model with a linear kernel achieves an accuracy of 94%, which matches the performance of Logistic Regression.
+Decision Tree:
 
-A scatter plot can display relationships between specific ingredients and the average user ratings. For example, you could map dishes containing certain ingredients (like garlic, chicken, or chocolate) against their ratings, potentially revealing which ingredients are associated with higher-rated recipes.
-Recipe Complexity vs. Time Scatter Plot:
+A Decision Tree model is trained, and the tree structure is visualized using plot_tree to show the decision-making process of the model.
+AdaBoost:
 
-You can visualize the relationship between the complexity of a recipe (e.g., number of ingredients or steps) and the cooking time. This helps in understanding whether more complex recipes generally take longer to prepare or not.
-Recipe Category Scatter Plot:
+AdaBoost, a boosting ensemble technique, is applied with 50 estimators, resulting in an accuracy of 93.3%.
 
-Using clustering techniques (e.g., K-means or t-SNE for dimensionality reduction), a scatter plot could map different recipes based on their ingredients or categories (such as breakfast, dessert, or main course). This would visually show how similar or distinct various types of recipes are based on ingredient usage.
-Calories vs. Ingredients Scatter Plot:
+Neural Network (TensorFlow/Keras):
+A feedforward neural network is built using Keras:
+The model consists of two hidden layers, the first with 64 neurons and the second with 32 neurons, both using ReLU activation.
+The output layer uses a sigmoid activation function for binary classification.
+The model is trained for 10 epochs using the Adam optimizer and binary crossentropy loss.
+After training, the neural network achieves a 94% accuracy on the test data, comparable to the Logistic Regression and SVM models.
+Clustering:
+K-Means clustering is applied to group recipes based on calorie and protein content, although detailed clustering results or visualizations were not provided in this code snippet.
+This workflow showcases how different machine learning models can be used for classification tasks and how they can be optimized for performance on a dataset.
 
-You can create a scatter plot showing the relationship between the number of ingredients in a recipe and its estimated calorie count. This might help to identify whether more ingredients generally lead to higher-calorie dishes.
+
+
+
+
+
