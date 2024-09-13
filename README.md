@@ -38,6 +38,35 @@ K-Means clustering is applied to group recipes based on calorie and protein cont
 This workflow showcases how different machine learning models can be used for classification tasks and how they can be optimized for performance on a dataset.
 
 
+**Visualisation**
+Dataset Overview:
+
+The dataset contains 20,052 rows and 680 columns, with columns representing different food recipes and various attributes like ratings, calories, protein, fat, and sodium.
+Handling Missing and Abnormal Values:
+
+Calories: Rows where calories exceeded 10,000 were removed, considering them outliers. Missing values in the calorie column were filled with the mean value (487.9).
+Duplicates: Duplicate rows were identified and removed. After removing duplicates, the dataset contained 17,719 rows.
+Exploratory Data Analysis (EDA):
+
+Distribution of Ratings: A histogram and boxplot showed the distribution of recipe ratings, with the most frequent rating being around 4.375.
+Calories Distribution: A violin plot, boxplot, and histogram visualized the spread of calories across different recipes.
+Scatter Plot: A scatter plot between calories and ratings indicated no clear linear relationship.
+Column Manipulation:
+
+Unnecessary columns like title and calories were dropped as part of data cleaning.
+The final dataset consisted of the columns rating, protein, fat, and sodium.
+Visualizations:
+
+Several plots like histograms, scatter plots, and joint plots were used to visualize the relationships between the numerical features such as rating, calories, protein, etc.
+Key Statistics:
+
+Rating: Mean rating is around 3.72, with a standard deviation of 1.32.
+Calories: The calories had a mean of 502, ranging from 0 to 9831.
+Protein: Mean protein is 22.36g, with significant outliers.
+Sodium: Some recipes had extremely high sodium values, with a max value of 132,220.
+The analysis focused on cleaning the dataset, handling missing values, identifying patterns in the distribution of ratings, calories, and other features, and visualizing those relationships.
+
+
 
 
 
